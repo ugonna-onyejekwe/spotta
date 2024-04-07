@@ -13,6 +13,7 @@ import { HiOutlineThumbUp } from "react-icons/hi";
 import { HiOutlineThumbDown } from "react-icons/hi";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { LuCheckCircle } from "react-icons/lu";
 
 import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
@@ -25,6 +26,7 @@ import React, { useState } from "react";
 export default function Reviews_page() {
   const [showamenities, setShowamenities] = useState(false);
   const [showmodel, setShowmodel] = useState(false);
+  const [show_success_msg, setShow_success_msg] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [anonymous, setAnonymous] = useState(false);
@@ -35,26 +37,34 @@ export default function Reviews_page() {
     setComment("");
     setRating(0);
     setShowmodel(false);
+
+    setTimeout(() => {
+      setShow_success_msg(false);
+    }, 4000);
   };
 
   const handle_submit = () => {
-    setReviewsdata([
-      {
-        person: {
-          name: anonymous ? "anonymous" : "james t.",
-          img: anonymous ? anonymous_img : img,
-          location: "ikate, lekki",
-          rating: rating,
-          time: "now",
+    setTimeout(() => {
+      setReviewsdata([
+        {
+          person: {
+            name: anonymous ? "anonymous" : "james t.",
+            img: anonymous ? anonymous_img : img,
+            location: "ikate, lekki",
+            rating: rating,
+            time: "now",
+          },
+          review: comment,
+          tag: "",
+          likes: 0,
+          dislike: 0,
+          comment: 0,
         },
-        review: comment,
-        tag: "",
-        likes: 0,
-        dislike: 0,
-        comment: 0,
-      },
-      ...reviewsdata,
-    ]);
+        ...reviewsdata,
+      ]);
+      setShow_success_msg(true);
+    }, 1000);
+
     init();
   };
 
@@ -117,10 +127,13 @@ export default function Reviews_page() {
       </main>
 
       <div className={showmodel ? "modal_section active" : "modal_section "}>
-        <div className="overlay"></div>
-        <div className="add_review_modal">
+        <div className={showmodel ? "overlay active" : "overlay"}></div>
+        <div
+          className={showmodel ? "add_review_modal active" : "add_review_modal"}
+        >
           <h2>review location</h2>
           <h3>Bonny and Clyde Street, Ajao Estate, Lagos</h3>
+
           <div className="select_amenities_section">
             <button
               onClick={() => {
@@ -193,6 +206,14 @@ export default function Reviews_page() {
               cancel
             </button>
           </div>
+        </div>
+        <div
+          className={
+            show_success_msg ? "successful_msg active" : "successful_msg"
+          }
+        >
+          <LuCheckCircle />
+          <p>review submitted</p>
         </div>
       </div>
     </div>

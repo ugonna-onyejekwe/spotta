@@ -5,6 +5,7 @@
   .header {
     padding: 20px 0;
     background: var(--bg_color_alt);
+    position: sticky !important;
 
     .sm_sc_navbar,
     .sm_sc_subnav {
@@ -235,35 +236,22 @@
   }
 
   .modal_section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    opacity: 0;
-    z-index: 11100;
+    .overlay {
+      background: #213449f2;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 100;
+      transition: opacity 0.4s ease;
 
-    &.active {
-      pointer-events: all;
-      opacity: 1;
-
-      .overlay {
+      &.active {
         opacity: 1;
         pointer-events: all;
       }
-      .add_review_modal {
-        transform: translate(-50%, -50%);
-      }
-    }
-    .overlay {
-      background: #213449f2;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
     }
     .add_review_modal {
       z-index: 1;
@@ -276,6 +264,11 @@
       padding: 30px;
       border-radius: 6px;
       transition: transform 0.4s ease;
+
+      &.active {
+        transform: translate(-50%, -50%);
+        z-index: 110;
+      }
 
       h2 {
         text-transform: capitalize;
@@ -406,6 +399,31 @@
           align-items: center;
           justify-content: center;
         }
+      }
+    }
+    .successful_msg {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -100px;
+      z-index: 120;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 40px;
+      border: 1px solid #0f920f;
+      color: #0f920f;
+      background: var(--bg_color);
+      transition: 0.4s ease;
+      border-radius: 6px;
+      p {
+        text-transform: capitalize;
+        font-size: 16pxpx;
+        color: #0f920f;
+      }
+
+      &.active {
+        top: 200px;
       }
     }
   }
