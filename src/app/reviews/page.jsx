@@ -72,10 +72,10 @@ export default function Reviews_page() {
           <section className="reviews_section">
             {reviewsdata.map((review, key) => {
               return (
-                <div className="box">
+                <div className="box" key="key">
                   <div className="avatar_section">
                     <div className="col1">
-                      <Image src={review.person.img} />
+                      <Image src={review.person.img} alt="img" />
                       <p>
                         {review.person.name} <span>{review.person.time}</span>
                       </p>

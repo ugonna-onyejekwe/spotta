@@ -11,7 +11,7 @@ export const Review_card = ({ person, review, tag }) => {
       <div className="avater_section">
         <div className="part1">
           <div className="img_con">
-            <Image src={person.img} />
+            <Image src={person.img} alt="img" />
           </div>
           <div className="txt_con">
             <h5>{person.name}</h5>
