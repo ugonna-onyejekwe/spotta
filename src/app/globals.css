@@ -27,10 +27,6 @@ p {
   color: var(--text_color);
 }
 
-.logo {
-  width: 120px !important;
-}
-
 h1,
 h2,
 h3,
@@ -100,10 +96,4 @@ img {
 .btn_secondary:disabled {
   border-color: rgba(51, 102, 255, 0.3);
   color: rgba(51, 102, 255, 0.3);
-}
-
-@media (max-width: 423px) {
-  .container {
-    width: 90%;
-  }
 }

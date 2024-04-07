@@ -22,6 +22,10 @@ body {
   margin: 0 auto;
 }
 
+.logo {
+  width: 120px !important;
+}
+
 p {
   font-weight: 400;
   font-size: 15px;
@@ -52,6 +56,7 @@ img {
 
 button {
   cursor: pointer;
+  white-space: nowrap !important;
 }
 
 .btn_primary {
@@ -101,5 +106,11 @@ button {
   &:disabled {
     border-color: rgba(51, 102, 255, 0.3);
     color: rgba(51, 102, 255, 0.3);
+  }
+}
+
+@media (max-width: 423px) {
+  .container {
+    width: 90%;
   }
 }
