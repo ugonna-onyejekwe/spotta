@@ -72,7 +72,7 @@ export default function Reviews_page() {
           <section className="reviews_section">
             {reviewsdata.map((review, key) => {
               return (
-                <div className="box" key="key">
+                <div className="box" key={key}>
                   <div className="avatar_section">
                     <div className="col1">
                       <Image src={review.person.img} alt="img" />
@@ -108,10 +108,10 @@ export default function Reviews_page() {
             })}
           </section>
           <section className="img_section">
-            <Image src={image1} />
-            <Image src={image2} />
-            <Image src={image3} />
-            <Image src={image4} />
+            <Image src={image1} alt="img" />
+            <Image src={image2} alt="img" />
+            <Image src={image3} alt="img" />
+            <Image src={image4} alt="img" />
           </section>
         </div>
       </main>
@@ -152,7 +152,7 @@ export default function Reviews_page() {
             {[...Array(5)].map((_, index) => {
               const curr_rating = index + 1;
               return (
-                <label>
+                <label key={index}>
                   <IoIosStar
                     color={curr_rating <= rating ? "#FABB07" : "#fab90752"}
                     onClick={() => setRating(curr_rating)}
