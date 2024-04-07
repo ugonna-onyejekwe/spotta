@@ -212,7 +212,7 @@ export default function Reviews_page() {
             show_success_msg ? "successful_msg active" : "successful_msg"
           }
         >
-          <LuCheckCircle />
+          <LuCheckCircle className="icon" />
           <p>review submitted</p>
         </div>
       </div>
