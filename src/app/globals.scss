@@ -12,7 +12,7 @@
 body {
   width: 100%;
   background: var(--bg_color);
-  height: 100%;
+  height: fit-content;
   overflow-x: hidden;
   color: var(--text_color);
 }
