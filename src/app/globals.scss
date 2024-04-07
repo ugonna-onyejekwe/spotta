@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -26,11 +27,6 @@ p {
   font-size: 15px;
   color: var(--text_color);
 }
-
-.logo {
-  width: 120px !important;
-}
-
 h1,
 h2,
 h3,
@@ -54,6 +50,10 @@ img {
   height: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 .btn_primary {
   padding: 18px 33px;
   border-radius: 6px;
@@ -63,18 +63,19 @@ img {
   font-size: 13px;
   cursor: pointer;
   transition: 0.4s ease;
-}
-.btn_primary:hover {
-  background: rgb(41, 82, 204);
-}
-.btn_primary:disabled {
-  background: rgb(228, 233, 251);
-}
-.btn_primary:focus {
-  background: rgb(41, 82, 204);
-}
-.btn_primary:active {
-  background: rgb(6, 30, 102);
+
+  &:hover {
+    background: rgba(41, 82, 204, 1);
+  }
+  &:disabled {
+    background: rgba(228, 233, 251, 1);
+  }
+  &:focus {
+    background: rgba(41, 82, 204, 1);
+  }
+  &:active {
+    background: rgba(6, 30, 102, 1);
+  }
 }
 
 .btn_secondary {
@@ -87,23 +88,18 @@ img {
   cursor: pointer;
   transition: 0.4s ease;
   border: 1px solid rgba(51, 102, 255, 0.342);
-}
-.btn_secondary:hover {
-  border-color: rgb(51, 102, 255);
-}
-.btn_secondary:active {
-  background: rgb(241, 245, 255);
-}
-.btn_secondary:focus {
-  border-color: rgb(51, 102, 255);
-}
-.btn_secondary:disabled {
-  border-color: rgba(51, 102, 255, 0.3);
-  color: rgba(51, 102, 255, 0.3);
-}
 
-@media (max-width: 423px) {
-  .container {
-    width: 90%;
+  &:hover {
+    border-color: rgb(51, 102, 255);
+  }
+  &:active {
+    background: rgba(241, 245, 255, 1);
+  }
+  &:focus {
+    border-color: rgb(51, 102, 255);
+  }
+  &:disabled {
+    border-color: rgba(51, 102, 255, 0.3);
+    color: rgba(51, 102, 255, 0.3);
   }
 }
