@@ -69,7 +69,7 @@ export const Large_screen_subnav = (props) => {
         <div className="txt_con">
           <h3>bonny and clyde street, ajoe estate, lagos</h3>
           <p>
-            <b>"420" Reviews</b>
+            <b> &quot;420&quot; Reviews</b>
             (People are reving about the seleted location)
           </p>
         </div>
@@ -127,7 +127,7 @@ export const Sm_screen_subnav = (props) => {
       <div className="txt_con">
         <h3>bonny and clyde street, ajoe estate, lagos</h3>
         <p>
-          <b>"420" Reviews</b>
+          <b>&quot;420&quot; Reviews</b>
           (People are reving about the seleted location)
         </p>
       </div>
